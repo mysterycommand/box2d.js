@@ -19,7 +19,9 @@ LINK_OPTS = \
 -s EXPORT_BINDINGS=1 \
 -s RESERVED_FUNCTION_POINTERS=20 --post-js box2d_glue.js --memory-init-file 0 \
 -s NO_EXIT_RUNTIME=1 glue_stub.cpp \
--s EXPORTED_RUNTIME_METHODS=[]
+-s NO_FILESYSTEM=1 \
+-s EXPORTED_RUNTIME_METHODS=[] \
+-s ERROR_ON_UNDEFINED_SYMBOLS=0
 
 ifeq ($(BUILD), debug)
 	OPTS = -O0 -g2
